@@ -11,18 +11,29 @@ main {
   font-weight: 700;
   padding: 3.4rem;
 }
-header{
+header {
   align-items: center;
 }
-h1{
+h1 {
   text-align: center;
   font-size: 6rem;
   font-weight: 900;
   margin: 0;
 }
-main{
+main {
   text-align: center;
 }
-main img{
+main img {
   width: 55%;
 }
+header.dark {
+  background: black;
+  color: white;
+}
+main.dark {
+  background: black;
+  color: rgb(204, 46, 46);
+}
+main.dark p{
+  color: rgb(255, 165, 0);
+} 

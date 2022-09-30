@@ -1,15 +1,23 @@
-import { useState } from "react";
+import { useContext } from "react";
 import Switch from "react-switch";
+import { ThemeContext } from "../App";
 
 const Title = () => {
-  const [theme, setTheme] = useState(false);
-  const toggleSwitch = (checked) => {
-    setTheme(checked);
+  const { theme, setTheme } = useContext(ThemeContext);
+
+  const toggleSwitch = () => {
+    setTheme(theme === "light" ? "dark" : "light");
   };
   return (
-    <header>
-      <span>Mode</span>
-      <Switch onChange={toggleSwitch} checked={theme} />
+    <header className={theme === "dark" ? "dark" : "light"}>
+      <span>Mode {theme}</span>
+      <Switch
+        onChange={toggleSwitch}
+        checked={theme === "dark"}
+        uncheckedIcon={false}
+        checkedIcon={false}
+        onColor={"#ffa500"}
+      />
     </header>
   );
 };
